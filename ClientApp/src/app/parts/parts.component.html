@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Parts</h1>
+
+<p *ngIf="!parts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="parts">
+  <thead>
+    <tr>
+      <th>Model No.</th>
+      <th>Part Name</th>
+      <th>Price</th>
+      <th>Amount On Hand</th>
+      <!-- insert images here...maybe -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Part of parts">
+      <td>{{ Part.modelNo }}</td>
+      <td>{{ Part.partName }}</td>
+      <td>{{ Part.price }}</td>
+      <td>{{ Part.onHand }}</td>
+    </tr>
+  </tbody>
+</table>
+
+Model No.
+<input [(ngModel)]="newPart.modelNo" name="modelNo" />
+Part Name
+<input [(ngModel)]="newPart.partName" name="partName" />
+Price
+<input type="number" [(ngModel)]="newPart.price" name="price" />
+Amount on Hand
+<input type="number" [(ngModel)]="newPart.onHand" name="onHand" />
+
+<button (click)="save()">Save</button>
