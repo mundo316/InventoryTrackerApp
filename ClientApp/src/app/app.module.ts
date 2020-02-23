@@ -13,6 +13,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { PartsComponent } from './parts/parts.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
+import { DriversComponent } from './drivers/drivers.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ComponentNameComponent } from './component-name/component-name.componen
     HomeComponent,
     FetchDataComponent,
     PartsComponent,
-    ComponentNameComponent
+    ComponentNameComponent,
+    DriversComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
