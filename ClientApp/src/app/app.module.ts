@@ -12,6 +12,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { PartsComponent } from './parts/parts.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PartsComponent } from './parts/parts.component';
     NavMenuComponent,
     HomeComponent,
     FetchDataComponent,
-    PartsComponent
+    PartsComponent,
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
