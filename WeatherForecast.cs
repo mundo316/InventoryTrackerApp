@@ -1,6 +1,6 @@
 using System;
 
-namespace capstone
+namespace InventoryTrackerApp
 {
     public class WeatherForecast
     {

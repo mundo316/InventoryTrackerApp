@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace capstone.Migrations
+namespace InventoryTrackerApp.Migrations
 {
     public partial class initialcreate : Migration
     {

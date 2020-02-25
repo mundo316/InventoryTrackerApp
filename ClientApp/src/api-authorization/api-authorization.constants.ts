@@ -1,4 +1,4 @@
-export const ApplicationName = 'capstone';
+export const ApplicationName = 'InventoryTrackerApp';
 
 export const ReturnUrlType = 'returnUrl';
 

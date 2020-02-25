@@ -6,14 +6,14 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
-using capstone.Data;
-using capstone.Models;
+using InventoryTrackerApp.Data;
+using InventoryTrackerApp.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 
-namespace capstone
+namespace InventoryTrackerApp
 {
     public class Startup
     {

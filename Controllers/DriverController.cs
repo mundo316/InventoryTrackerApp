@@ -13,29 +13,29 @@ namespace InventoryTrackerApp.Controllers
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class PartsController : ControllerBase
+    public class DriversController : ControllerBase
     {
 
         [HttpGet]
-        public IEnumerable<Part> Get()
+        public IEnumerable<Driver> Get()
         {
-            Part[] parts = null;
+            Driver[] drivers = null;
             using (var context = new ApplicationDbContext())
             {
-                parts = context.Parts.ToArray();
+                drivers = context.Drivers.ToArray();
             }
-            return parts;
+            return drivers;
 
         }
         [HttpPost]
-        public Part Post([FromBody]Part part)
+        public Driver Post([FromBody]Driver driver)
         {
             using (var context = new ApplicationDbContext())
             {
-                context.Parts.Add(part);
+                context.Drivers.Add(driver);
                 context.SaveChanges();
             }
-            return part;
+            return driver;
         }
     }
 }

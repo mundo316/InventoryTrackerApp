@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace capstone.Controllers
+namespace InventoryTrackerApp.Controllers
 {
     public class OidcConfigurationController : Controller
     {

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using capstone.Data;
+using InventoryTrackerApp.Data;
 
-namespace capstone.Migrations
+namespace InventoryTrackerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20200223173708_initialcreate")]
@@ -232,7 +232,7 @@ namespace capstone.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("capstone.Models.ApplicationUser", b =>
+            modelBuilder.Entity("InventoryTrackerApp.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -296,7 +296,7 @@ namespace capstone.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("capstone.Models.Part", b =>
+            modelBuilder.Entity("InventoryTrackerApp.Models.Part", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -330,7 +330,7 @@ namespace capstone.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("capstone.Models.ApplicationUser", null)
+                    b.HasOne("InventoryTrackerApp.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -339,7 +339,7 @@ namespace capstone.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("capstone.Models.ApplicationUser", null)
+                    b.HasOne("InventoryTrackerApp.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -354,7 +354,7 @@ namespace capstone.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("capstone.Models.ApplicationUser", null)
+                    b.HasOne("InventoryTrackerApp.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -363,7 +363,7 @@ namespace capstone.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("capstone.Models.ApplicationUser", null)
+                    b.HasOne("InventoryTrackerApp.Models.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

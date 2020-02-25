@@ -1,1 +1,34 @@
-<p>drivers works!</p>
+<h1 id="tableLabel">Parts</h1>
+
+<p *ngIf="!parts"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="parts">
+  <thead>
+    <tr>
+      <th>Model No.</th>
+      <th>Part Name</th>
+      <th>Price</th>
+      <th>Amount On Hand</th>
+      <!-- insert images here...maybe -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Part of parts">
+      <td>{{ Driver.id }}</td>
+      <td>{{ Driver.truckNo }}</td>
+      <td>{{ Driver.driverName }}</td>
+      <td>{{ Driver.locationCode }}</td>
+    </tr>
+  </tbody>
+</table>
+
+ID
+<input [(ngModel)]="newPart.modelNo" name="modelNo" />
+Truck Number
+<input [(ngModel)]="newPart.partName" name="partName" />
+Driver Name
+<input type="number" [(ngModel)]="newPart.price" name="price" />
+Location Code
+<input type="number" [(ngModel)]="newPart.onHand" name="onHand" />
+
+<button (click)="save()">Save</button>

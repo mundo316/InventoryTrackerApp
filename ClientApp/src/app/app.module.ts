@@ -12,7 +12,6 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { PartsComponent } from './parts/parts.component';
-import { ComponentNameComponent } from './component-name/component-name.component';
 import { DriversComponent } from './drivers/drivers.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { DriversComponent } from './drivers/drivers.component';
     HomeComponent,
     FetchDataComponent,
     PartsComponent,
-    ComponentNameComponent,
     DriversComponent
   ],
   imports: [
@@ -32,7 +30,7 @@ import { DriversComponent } from './drivers/drivers.component';
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-        { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+        { path: 'driverRoster', component: DriversComponent, canActivate: [AuthorizeGuard] },
         { path: 'parts' , component: PartsComponent, canActivate: [AuthorizeGuard] },
     ])
   ],

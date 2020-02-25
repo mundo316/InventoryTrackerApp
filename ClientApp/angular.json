@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "capstone": {
+    "InventoryTrackerApp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "capstone:build"
+            "browserTarget": "InventoryTrackerApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "capstone:build:production"
+              "browserTarget": "InventoryTrackerApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "capstone:build"
+            "browserTarget": "InventoryTrackerApp:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
         }
       }
     },
-    "capstone-e2e": {
+    "InventoryTrackerApp-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -119,7 +119,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "capstone:serve"
+            "devServerTarget": "InventoryTrackerApp:serve"
           }
         },
         "lint": {
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "capstone"
+  "defaultProject": "InventoryTrackerApp"
 }

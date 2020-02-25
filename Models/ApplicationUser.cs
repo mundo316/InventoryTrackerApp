@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace capstone.Models
+namespace InventoryTrackerApp.Models
 {
     public class ApplicationUser : IdentityUser
     {

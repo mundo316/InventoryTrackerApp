@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace capstone.Models
+namespace InventoryTrackerApp.Models
 {
 public class Driver 
     {
@@ -14,5 +14,7 @@ public class Driver
         public int id {get; set; }
         public string truckNo { get; set; }
         public string driverName { get; set; }
+
+        public string locationCode { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/capstone.csproj",
+  "FilePath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/InventoryTrackerApp.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14493,7 +14493,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "capstone",
+  "RootNamespace": "InventoryTrackerApp",
   "Documents": [
     {
       "FilePath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/Pages/Shared/_LoginPartial.cshtml",
