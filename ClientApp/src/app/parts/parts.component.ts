@@ -22,7 +22,7 @@ export class PartsComponent implements OnInit {
       this.parts = await this.http.get<Part[]>(this.baseUrl + 'parts').toPromise();
   }
 
-
+ 
 }
 
 interface Part {

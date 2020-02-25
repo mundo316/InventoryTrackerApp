@@ -1,19 +1,19 @@
-<h1 id="tableLabel">Parts</h1>
+<h1 id="tableLabel">Drivers</h1>
 
-<p *ngIf="!parts"><em>Loading...</em></p>
+<p *ngIf="!drivers"><em>Loading...</em></p>
 
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="parts">
   <thead>
     <tr>
-      <th>Model No.</th>
-      <th>Part Name</th>
-      <th>Price</th>
-      <th>Amount On Hand</th>
+      <th>ID</th>
+      <th>Truck No.</th>
+      <th>Driver Name</th>
+      <th>Location Code</th>
       <!-- insert images here...maybe -->
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let Part of parts">
+    <tr *ngFor="let Driver of drivers">
       <td>{{ Driver.id }}</td>
       <td>{{ Driver.truckNo }}</td>
       <td>{{ Driver.driverName }}</td>
@@ -22,13 +22,14 @@
   </tbody>
 </table>
 
-ID
-<input [(ngModel)]="newPart.modelNo" name="modelNo" />
+
 Truck Number
-<input [(ngModel)]="newPart.partName" name="partName" />
+<input [(ngModel)]="newDriver.truckNo" name="truckNo" />
 Driver Name
-<input type="number" [(ngModel)]="newPart.price" name="price" />
+<input type="string" [(ngModel)]="newDriver.driverName" name="driverName" />
 Location Code
-<input type="number" [(ngModel)]="newPart.onHand" name="onHand" />
+<input type="string" [(ngModel)]="newDriver.locationCode" name="locationCode" />
 
 <button (click)="save()">Save</button>
+
+
