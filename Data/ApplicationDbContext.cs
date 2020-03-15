@@ -16,8 +16,11 @@ namespace InventoryTrackerApp.Data
     {
         public IConfiguration Configuration { get; }
         public DbSet<Part> Parts { get; set;}
+        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
-        public DbSet<Driver> Drivers {get; set; }
+        public DbSet<OrderPart> OrderParts { get; set; }
+
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)

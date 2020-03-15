@@ -3,14 +3,16 @@ using System;
 using InventoryTrackerApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InventoryTrackerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200311005354_addtransactions")]
+    partial class addtransactions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,27 +182,6 @@ namespace InventoryTrackerApp.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Drivers");
-                });
-
-            modelBuilder.Entity("InventoryTrackerApp.Models.OrderPart", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("partId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("transactionId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("partId");
-
-                    b.HasIndex("transactionId");
-
-                    b.ToTable("OrderParts");
                 });
 
             modelBuilder.Entity("InventoryTrackerApp.Models.Part", b =>
@@ -380,21 +361,6 @@ namespace InventoryTrackerApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("InventoryTrackerApp.Models.OrderPart", b =>
-                {
-                    b.HasOne("InventoryTrackerApp.Models.Part", "part")
-                        .WithMany()
-                        .HasForeignKey("partId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("InventoryTrackerApp.Models.Transaction", "transaction")
-                        .WithMany("orderParts")
-                        .HasForeignKey("transactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("InventoryTrackerApp.Models.Transaction", b =>

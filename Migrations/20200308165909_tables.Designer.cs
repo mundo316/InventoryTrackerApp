@@ -3,14 +3,16 @@ using System;
 using InventoryTrackerApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InventoryTrackerApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200308165909_tables")]
+    partial class tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -182,27 +184,6 @@ namespace InventoryTrackerApp.Migrations
                     b.ToTable("Drivers");
                 });
 
-            modelBuilder.Entity("InventoryTrackerApp.Models.OrderPart", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("partId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("transactionId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("partId");
-
-                    b.HasIndex("transactionId");
-
-                    b.ToTable("OrderParts");
-                });
-
             modelBuilder.Entity("InventoryTrackerApp.Models.Part", b =>
                 {
                     b.Property<int>("id")
@@ -224,30 +205,6 @@ namespace InventoryTrackerApp.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Parts");
-                });
-
-            modelBuilder.Entity("InventoryTrackerApp.Models.Transaction", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("driverId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("driverId");
-
-                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -380,34 +337,6 @@ namespace InventoryTrackerApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("InventoryTrackerApp.Models.OrderPart", b =>
-                {
-                    b.HasOne("InventoryTrackerApp.Models.Part", "part")
-                        .WithMany()
-                        .HasForeignKey("partId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("InventoryTrackerApp.Models.Transaction", "transaction")
-                        .WithMany("orderParts")
-                        .HasForeignKey("transactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("InventoryTrackerApp.Models.Transaction", b =>
-                {
-                    b.HasOne("InventoryTrackerApp.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("InventoryTrackerApp.Models.Driver", "driver")
-                        .WithMany()
-                        .HasForeignKey("driverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
