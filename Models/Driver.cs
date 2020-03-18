@@ -16,5 +16,9 @@ public class Driver
         public string driverName { get; set; }
 
         public string locationCode { get; set; }
+
+
+        [InverseProperty("driver")]
+        public List<Transaction> transactions { get; set; }
     }
 }

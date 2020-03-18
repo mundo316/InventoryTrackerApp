@@ -7,6 +7,7 @@ using InventoryTrackerApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventoryTrackerApp.Controllers
 {
@@ -22,11 +23,13 @@ namespace InventoryTrackerApp.Controllers
             Driver[] drivers = null;
             using (var context = new ApplicationDbContext())
             {
-                drivers = context.Drivers.ToArray();
+                drivers = context.Drivers.Include(d=>d.transactions).ToArray();
             }
             return drivers;
-
         }
+
+//[HttpGet{'id'}]
+
         [HttpPost]
         public Driver Post([FromBody]Driver driver)
         {
@@ -39,3 +42,5 @@ namespace InventoryTrackerApp.Controllers
         }
     }
 }
+
+//update??
