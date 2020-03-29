@@ -11,7 +11,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace InventoryTrackerApp.Controllers
 {
-    public class TransactionController
+    [Authorize]
+    [ApiController]
+    [Route("[controller]")]
+    public class TransactionController : ControllerBase
     {
         //get
         [HttpGet]

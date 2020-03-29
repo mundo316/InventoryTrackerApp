@@ -13,15 +13,23 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { PartsComponent } from './parts/parts.component';
 import { DriversComponent } from './drivers/drivers.component';
+import { DriverviewComponent } from './driverview/driverview.component';
+import { OnhandviewComponent } from './onhandview/onhandview.component';
+import { PartsSheetComponent } from './parts-sheet/parts-sheet.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     NavMenuComponent,
     HomeComponent,
     FetchDataComponent,
     PartsComponent,
-    DriversComponent
+    DriversComponent,
+    DriverviewComponent,
+    OnhandviewComponent,
+    PartsSheetComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

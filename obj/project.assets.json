@@ -9505,9 +9505,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/capstone.csproj",
-      "projectName": "capstone",
-      "projectPath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/capstone.csproj",
+      "projectUniqueName": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/InventoryTrackerApp.csproj",
+      "projectName": "InventoryTrackerApp",
+      "projectPath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/InventoryTrackerApp.csproj",
       "packagesPath": "/Users/raygarcia/.nuget/packages/",
       "outputPath": "/Users/raygarcia/Documents/DevFolder/Angular/InventoryTrackerApp/obj/",
       "projectStyle": "PackageReference",

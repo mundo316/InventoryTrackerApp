@@ -30,7 +30,7 @@ namespace InventoryTrackerApp.Controllers
         }
 
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public Part GetById(int id)
         {
             using (var context = new ApplicationDbContext())
