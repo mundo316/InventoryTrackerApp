@@ -17,6 +17,7 @@ import { DriverviewComponent } from './driverview/driverview.component';
 import { OnhandviewComponent } from './onhandview/onhandview.component';
 import { PartsSheetComponent } from './parts-sheet/parts-sheet.component';
 import { TableComponent } from './table/table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [ 
@@ -40,7 +41,8 @@ import { TableComponent } from './table/table.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
         { path: 'driverRoster', component: DriversComponent, canActivate: [AuthorizeGuard] },
         { path: 'parts' , component: PartsComponent, canActivate: [AuthorizeGuard] },
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

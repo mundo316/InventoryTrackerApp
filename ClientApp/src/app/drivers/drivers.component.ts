@@ -30,6 +30,6 @@ export class DriversComponent implements OnInit {
     id: number;
     truckNo: string;
     driverName: string;
-    locationCode: number;
-   //image: img;
+    locationCode: string;
+   //show amount the driver has purchased this week?
   }

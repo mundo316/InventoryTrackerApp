@@ -2,7 +2,7 @@
 
 <p *ngIf="!drivers"><em>Loading...</em></p>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="parts">
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="drivers">
   <thead>
     <tr>
       <th>ID</th>
@@ -22,13 +22,16 @@
   </tbody>
 </table>
 
-
+<br>
+<h2>Add a Driver</h2>
 Truck Number
 <input [(ngModel)]="newDriver.truckNo" name="truckNo" />
 Driver Name
 <input type="string" [(ngModel)]="newDriver.driverName" name="driverName" />
 Location Code
 <input type="string" [(ngModel)]="newDriver.locationCode" name="locationCode" />
+<!-- <app-new-driver-modal></app-new-driver-modal> -->
+
 
 <button (click)="save()">Save</button>
 

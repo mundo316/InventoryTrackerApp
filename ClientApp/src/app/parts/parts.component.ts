@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-parts',
@@ -7,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./parts.component.css']
 })
 export class PartsComponent implements OnInit {
+  
   public parts: Part[];
   public newPart: Part = {id: 0, modelNo:'', partName: '', price: 0, onHand: 0 };
 
