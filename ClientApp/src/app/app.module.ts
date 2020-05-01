@@ -17,7 +17,9 @@ import { DriverviewComponent } from './driverview/driverview.component';
 import { OnhandviewComponent } from './onhandview/onhandview.component';
 import { PartsSheetComponent } from './parts-sheet/parts-sheet.component';
 import { TableComponent } from './table/table.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule} from '@angular/material/button';
+import { CdkTableModule } from '@angular/cdk/table';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [ 
@@ -31,18 +33,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OnhandviewComponent,
     PartsSheetComponent,
     TableComponent,
+    TransactionComponent,
+
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    MatButtonModule,
     ApiAuthorizationModule,
+    CdkTableModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
         { path: 'driverRoster', component: DriversComponent, canActivate: [AuthorizeGuard] },
         { path: 'parts' , component: PartsComponent, canActivate: [AuthorizeGuard] },
-    ]),
-    BrowserAnimationsModule
+        { path: 'transaction' , component: TransactionComponent, canActivate: [AuthorizeGuard] },
+        
+    ])
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }

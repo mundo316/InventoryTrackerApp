@@ -1,0 +1,89 @@
+<table cdk-table [dataSource]="tableDataSource$" class="table table-hover">
+  
+        <!-- Part Column -->
+        <ng-container cdkColumnDef="name">
+          <th cdk-header-cell *cdkHeaderCellDef> Part </th>
+          <td cdk-cell *cdkCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+      
+        <!-- Week Column -->
+        <ng-container cdkColumnDef="types">
+          <th cdk-header-cell *cdkHeaderCellDef> Type </th>
+          <td cdk-cell *cdkCellDef="let row"> {{row.types}} </td>
+        </ng-container>
+      
+        <!-- Boxed Column -->
+        <ng-container cdkColumnDef="boxed">
+          <th cdk-header-cell *cdkHeaderCellDef> Boxed Inv. </th>
+          <td cdk-cell *cdkCellDef="let row" 
+              [ngClass]="{ 
+                           'table-success': superlatives$.value['highest-boxed'] === row.name,
+                           'table-danger': superlatives$.value['lowest-boxed'] === row.name
+                         }">
+            {{row.boxed}} 
+          </td>
+        </ng-container>
+      
+        <!-- Parts Room Column -->
+        <ng-container cdkColumnDef="proominv">
+          <th cdk-header-cell *cdkHeaderCellDef> Parts Room Inv. </th>
+          <td cdk-cell 
+              *cdkCellDef="let row" 
+              [ngClass]="{ 
+                           'table-success': superlatives$.value['highest-proominv'] === row.name,
+                           'table-danger': superlatives$.value['lowest-proominv'] === row.name
+                         }">
+            {{row.proominv}} 
+          </td>
+        </ng-container>
+      
+        <!-- On Hand Column -->
+        <ng-container cdkColumnDef="onhand">
+          <th cdk-header-cell *cdkHeaderCellDef> Total On Hand </th>
+          <td cdk-cell 
+          *cdkCellDef="let row" 
+          [ngClass]="{ 
+                       'table-success': superlatives$.value['highest-onhand'] === row.name,
+                       'table-danger': superlatives$.value['lowest-onhand'] === row.name
+                     }">
+        {{row.onhand}} 
+      </td>
+        </ng-container>
+      
+        <!-- Total Value Column -->
+        <ng-container cdkColumnDef="tvalue">
+          <th cdk-header-cell *cdkHeaderCellDef> Total Value </th>
+          <td cdk-cell 
+              *cdkCellDef="let row" 
+              [ngClass]="{ 
+                           'table-success': superlatives$.value['highest-tvalue'] === row.name,
+                           'table-danger': superlatives$.value['lowest-tvalue'] === row.name
+                         }">
+            {{row.tvalue}} 
+          </td>
+        </ng-container>
+
+          <!-- Sell Column -->
+  <ng-container cdkColumnDef="sell">
+        <th cdk-header-cell *cdkHeaderCellDef></th>
+        <td cdk-cell *cdkCellDef="let row">
+          <button class="btn btn-primary" (click)="sell(row.name)">Sell</button>
+        </td>
+      </ng-container>
+
+      <!-- Restock Column -->
+      <ng-container cdkColumnDef="restock">
+            <th cdk-header-cell *cdkHeaderCellDef></th>
+            <td cdk-cell *cdkCellDef="let row">
+              <button class="btn btn-primary" (click)="restock(row.name)">Restock</button>
+            </td>
+          </ng-container>
+
+       
+          <!-- Header and Row Declarations -->
+  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns$.value"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns$.value"></tr>
+
+
+
+      </table>
